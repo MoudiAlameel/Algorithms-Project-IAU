@@ -1,6 +1,6 @@
 # Algorithms-Project-IAU
 
-📊 This repository contains our implementation of algorithms in Python, tested on a dataset from UCI Machine Learning Repository.
+📊 This repository contains our analysis of existing algorithms in Python, tested on a dataset from UCI Machine Learning Repository.
 
 Project Overview
 
