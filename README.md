@@ -1,11 +1,11 @@
 # Algorithms-Project-IAU
 
-📊 This repository contains our implementation of an algorithm in Python, tested on a dataset from Kaggle. 
+📊 This repository contains our analysis of existing algorithms in Python, tested on a dataset from UCI Machine Learning Repository.
 
 Project Overview
 
 Language: Python
 
-Dataset: Kaggle (link or instructions will be added)
+Dataset: (https://archive.ics.uci.edu/ml/datasets/student+performance)
 
-Goal: Implement and test one algorithm on real data
+
