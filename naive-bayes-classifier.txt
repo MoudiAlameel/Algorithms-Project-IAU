@@ -1,0 +1,43 @@
+Input:
+    Student dataset D with n samples and m features
+    Class label Y ∈ {Pass, Fail}
+
+Output:
+    Predicted class for each student
+
+Begin
+
+1. Load the student dataset.
+2. Create a target class:
+       If final grade G3 ≥ threshold → Class = Pass
+       Else → Class = Fail
+
+3. Preprocess the dataset:
+       a. Separate numerical and categorical features
+       b. Normalize numerical features using standardization
+       c. Encode categorical features using one-hot encoding
+
+4. Split the dataset:
+       Training set = 80%
+       Testing set = 20%
+
+5. Training Phase:
+       For each class C in {Pass, Fail}:
+           For each feature Xi:
+               Compute mean μiC and variance σiC
+               Store probability parameters for Gaussian distribution
+
+6. Prediction Phase:
+       For each test sample X:
+           For each class C:
+               Compute posterior probability using:
+                   P(C | X) ∝ P(C) × Π P(Xi | C)
+           Assign X to the class with the highest posterior probability
+
+7. Evaluate performance using:
+       Accuracy
+       Precision
+       Recall
+       F1-score
+
+End
