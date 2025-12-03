@@ -3,9 +3,7 @@ import math
 import time
 import random
 
-# ===========================================================
 # 1. Load CSV (UCI student-mat.csv with ; separator) - LOCAL
-# ===========================================================
 
 def load_csv_local(filename="student-mat.csv"):
     data = []
@@ -19,9 +17,7 @@ def load_csv_local(filename="student-mat.csv"):
     return data, header
 
 
-# ===========================================================
 # 2. Encode Dataset (Numeric + Pass/Fail target)
-# ===========================================================
 
 def encode_dataset(data, header):
     processed = []
@@ -35,7 +31,6 @@ def encode_dataset(data, header):
         new_row = []
 
         for i, value in enumerate(row):
-            # skip G3 (it is the target)
             if i == g3_index:
                 continue
 
@@ -55,9 +50,7 @@ def encode_dataset(data, header):
     return processed
 
 
-# ===========================================================
 # 3. Manual Train/Test Split
-# ===========================================================
 
 def train_test_split_manual(data, test_ratio=0.2):
     random.shuffle(data)
@@ -65,9 +58,7 @@ def train_test_split_manual(data, test_ratio=0.2):
     return data[:cut], data[cut:]
 
 
-# ===========================================================
 # 4. Hardcoded Gaussian Naive Bayes
-# ===========================================================
 
 def mean(col):
     return sum(col) / len(col)
@@ -132,9 +123,7 @@ def evaluate(model, separated, test):
     return correct / len(test)
 
 
-# ===========================================================
-# 4.1 Feature Importance for Naive Bayes (Statistical Proxy)
-# ===========================================================
+# Feature Importance for Naive Bayes (Statistical Proxy)
 
 def compute_feature_importance_nb(model, feature_names):
     """
@@ -156,9 +145,7 @@ def compute_feature_importance_nb(model, feature_names):
     return importance
 
 
-# ===========================================================
 # 5. MAIN (VS Code / Local Python)
-# ===========================================================
 
 if __name__ == "__main__":
     print("➡ Loading dataset (student-mat.csv, ; separated)...")
@@ -185,9 +172,8 @@ if __name__ == "__main__":
     accuracy = evaluate(model, separated, test)
     print(f" Naive Bayes (Hardcoded) Accuracy: {accuracy:.4f}")
 
-    # =======================================================
     # 6. Feature Importance Output (Top 5)
-    # =======================================================
+    
     feature_importance = compute_feature_importance_nb(model, feature_names)
 
     print("\nTop 5 Feature Importances (Index: Value):")
