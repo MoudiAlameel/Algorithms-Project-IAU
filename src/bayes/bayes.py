@@ -5,7 +5,7 @@ import random
 
 # 1. Load CSV (UCI student-mat.csv with ; separator) - LOCAL
 
-def load_csv_local(filename="student-mat.csv"):
+def load_csv_local(filename="src/bayes/student-mat"):
     data = []
     with open(filename, "r", encoding="utf-8") as file:
         reader = csv.reader(file, delimiter=";")
